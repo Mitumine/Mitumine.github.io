@@ -1,127 +1,92 @@
----
-title: "Gatsby上でシンタックスハイライトを効かせる"
-date: "2021/02/09"
-description: "Techno"
-tags: ["program"]
-# thumbnail: assets/default.png
----
+# やりたいこと
 
-## Gatsby 上でシンタックスハイライトをきかせる
+- `Gatsbyjs`向けに書いた記事を
+- Qiita 向けの記事の書き方にしたい
 
-`gatsby-starter-blog`を使用している場合、
-余計な設定は不要で使用可能。
-`4.`,`5.` だけ読んどいたほうがいいかも。
+## ちょっとよくわからないので噛み砕いて
 
-### 1. 以下のモジュールをインストールする
+- `Gatsbyjs`向けに書いた記事をコピーし
+- 正規表現で Qiita 向けの記述になるように変形し
+- なんでもいいのでテキストとしてすぐ扱えるようにする
 
-- `prismjs`
-- `gatsby-remark-prismjs`
-- `gatsby-remark-prismjs-title`
+じゃあやってみましょう。
 
-```sh:title=terminal
-npm install -S prismjs gatsby-remark-prismjs gatsby-remark-prismjs-title
-```
+以前、`A to Bな変換系WebアプリをFlaskで作ろう！`という記事を書きましたが、  
+こんな変換のためにいちいち Web アプリをローンチするのもかったるすぎるので  
+PC 上で完結できるようにしましょう。
 
-### 2. `gatsby-config.js`の書き換え
+### そもそも〜向けの記事って何？
 
-※ `gatsby-starter-blog`を使用しているのでこの手順はスキップ可能。
+**コードブロックの書き方がちょっと違います。**  
+そのせいで片方向けの記事を書いてもう片方で公開したいとなるとちょっとめんどくさいです。
 
-```js:title=gatsby-config.js
-resolve: `gatsby-transformer-remark`,
-options: {
-  plugins: [
-    `gatsby-remark-prismjs-title`,
-    `gatsby-remark-prismjs`,
-  ]
-},
-```
+Gatsby 向けの記事だと`python:title=hoge`。
+Qiita 向けの記事だと`python :hoge`みたいな感じ。
 
-### 3. `gatsby-browser.js`の書き換え
+これをごちゃごちゃにするとこうなります。
 
-[Prism](https://prismjs.com/) を参考に好きなテーマで設定します。
-
-例えばデフォルトなら、
-
-```js:title=gatsby-browser.js
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
-```
-
-例えば`Tomorrownight`を適用させたいなら、
-
-```js:title=gatsby-browser.js
-// Highlighting for code blocks
-import "prismjs/themes/prism-tomorrow.css"
-```
-
-みたいな感じです。
-
-### 4. ハイライトにタイトルをつける
-
-ここまで正常に設定できていると、
-
-これが
-
-````markdown
-```python :aiueo
-
-```
-````
-
-`gatsby develop` するとこうなります。
-
-```html
-<div class="gatsby-code-title">
-  <span>aiueo</span>
-</div>
-```
-
-これに対してスタイルシートを設定していきます。
-なんでもいいので`import`している CSS を書き換えます。
-今回は、`style.css`に全部ぶち込んでいるのでここに書きます。
-
-ここはテーマに合わせて好きなように書き換えましょう。
-
-```css:title=style.css
-.gatsby-code-title {
-  background: #F5F2F0;
-  color: #000;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  margin: 20px 0px -24px;
-  padding: 8px 1rem 20px;
-  font: size 1em;
-  line-height: 1;
-  display: table;
-}
+```python:title=script.py
 
 ```
 
-### 5. 記事がハイライトされ…ないときの Tips
+これではちょっと嫌ですね。
+それでは、やっていきます。
 
-Q. ここまでちゃんと設定したはずなのにシンタックスハイライトが効きません…
+## 材料
 
-A. Markdown の書き方がおかしい可能性があります。
+- ShellScript もとい bash
 
-例えば、
+以上。
 
-```markdown:title=index.md
-python :aiueo
+## 早速組み立てていく
+
+できたものがこちらになります。
+
+```sh:title=script.sh
+# クリップボードから文字列を変数に代入する
+copied=`pbpaste | nkf -w`
+
+# Qiita <- Gatsby
+pat_1_before='(`{3,4})(.+):title=(.+)'
+pat_1_after='\1\2:\3'
+strings=`echo "$copied" | sed -E "s/$pat_1_before/$pat_1_after/g"`
+echo "$strings" | open -f
 ```
 
-ではタイトルもつかないしシンタックスハイライトもつかないので
+- 変数`copied`を作る。
+- `copied`に`pbpaste | nkf -w`で、  
+  クリップボードの中身をエンコードしたのちぶち込む。
+- 正規表現のパターンを用意する。
+- 変換する
+- `open -f`でテキストエディタ上に開く。
 
-```markdown:title=index.md
-python:title=aiueo
-```
+これで、
 
-とする。  
-**ハイライトしたい言語のあとにスペースを挿入しない**のがコツ。
+- Gatsby 向けに書いた記事をコピーする
+- スクリプトを実行する
+- 変換されて、テキストとしてアウトプットされる
 
-### できあがり
+といった感じで使えるようになりました、やったね。
 
-![1](1.png)
+…
 
-参考
+**まあ、ShellScript 初見で挑んで**  
+**こんな簡単に終わったわけがないんですけど**
 
-> [GatsbyJS で作っているブログでシンタックスハイライトが適用されるようにした \| キクナントカドットコム](https://kikunantoka.com/2019/12/03--install-syntax-highlight/)  
-> [GatsbyJS ブログのコードブロックにタイトルと指定行のハイライトを追加した \| のふのふろぐ](https://rpf-noblog.com/2020-05-02/gatsby-code-title-highlight/)
+## 詰まったところ
+
+Q. `pbpaste`使うなら相方の`pbcopy`でコピーすればスマートじゃね？  
+A. **何故か知らないんですけどそれができなかったのです。**  
+できなかったので、妥協案として「テキストエディタ上に開く」という動作にしました。  
+これはこれでファイルが生成されないのでスマートです。
+
+以上です。
+`pbcopy`使えないじゃん！って気づくのに 1 時間位かかりました。
+
+### 参考
+
+[sed を使って": \\1 not defined in the RE"などと出たらキャプチャの構文が間違っている \- Bye Bye Moore](https://shuzo-kino.hateblo.jp/entry/2017/06/21/235134)
+
+[文字コードと改行コード \| UNIX & Linux コマンド・シェルスクリプト リファレンス](https://shellscript.sunone.me/character_code.html)
+
+[［clip / pbcopy・pbpaste］クリップボードにコピー \| 日経クロステック（xTECH）](https://xtech.nikkei.com/it/atcl/column/15/042000103/080400036/)
