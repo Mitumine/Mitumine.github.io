@@ -4,33 +4,30 @@ import { Link } from "gatsby"
 function Layout({ title, children }) {
   // const rootPath = `${__PATH_PREFIX__}/`
   const header = (
-
-
-
     <header className="global-header">
       <h1 className="main-heading">
         <Link to="/">Sotono.works</Link>
       </h1>
-      <div class='container'>
-        <div class='row my-4'>
-          <div class='col'>
+      <div className='container'>
+        <div className='row my-4'>
+          <div className='col'>
             &nbsp;/&nbsp;
-            <Link to="/">Home</Link>
+      <Link to="/">Home</Link>
             &nbsp;/&nbsp;
-            <Link to="/tags/graphic">Graphics</Link>
+      <Link to="/tags/graphic">Graphics</Link>
             &nbsp;/&nbsp;
-            <Link to="/tags/music">Musics</Link>
+      <Link to="/tags/music">Musics</Link>
             &nbsp;/&nbsp;
-            <Link to="/tags/program">Programs</Link>
+      <Link to="/tags/program">Programs</Link>
             &nbsp;/&nbsp;
-            <Link to="/tags/etc">etc...</Link>
+      <Link to="/tags/log">log</Link>
             &nbsp;/&nbsp;
-            <Link to="/contact">Contact</Link>
+      <Link to="/contact">Contact</Link>
             &nbsp;/&nbsp;
           </div>
-        </div>
-      </div>
-    </header>
+        </div >
+      </div >
+    </header >
   )
 
   const footer = (

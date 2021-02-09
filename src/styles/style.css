@@ -324,6 +324,24 @@ a:focus {
 
 .card{
   text-decoration: none;
-
-
 }
+
+
+
+.card{
+  height:100%;
+}
+
+/* prism */
+
+.gatsby-code-title {
+  background: #F5F2F0;
+  color: #000;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  margin: 20px 0px -24px;
+  padding: 8px 1rem 20px;
+  font: size 1em;
+  line-height: 1;
+  display: table;
+}
+

@@ -12,6 +12,7 @@ module.exports = {
     },
 
   },
+
   plugins: [
     {
       resolve: `gatsby-plugin-typography`,
@@ -44,6 +45,11 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-prismjs-title`,
+          `gatsby-remark-prismjs`,
+
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -56,9 +62,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+
         ],
       },
     },
@@ -90,4 +94,5 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+
 }

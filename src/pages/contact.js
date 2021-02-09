@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from '../components/layout'
 import Bio from "../components/bio"
@@ -27,15 +27,15 @@ const ContactPage = () => {
   return (
     < Layout >
 
-      <div class='container'>
-        <div class='row my-4'>
-          <div class='col'>
+      <div className='container'>
+        <div className='row my-4'>
+          <div className='col'>
             <h2>SNS</h2>
-            <Link to={twitter_link}>Twitter</Link>
+            <a href={twitter_link} >Twitter</a>
           </div>
-        </div>
-        <div class='row my-4'>
-          <div class='col'>
+        </div >
+        <div className='row my-4' >
+          <div className='col' >
             <h2>Contact Form</h2>
             <form name="contact" method="POST" netlify>
               <div className="col-auto mb-4">
@@ -43,14 +43,14 @@ const ContactPage = () => {
                   お名前
         </label>
 
-                <input type="text" class="form-control mb-2" id="name" placeholder="First Name" />
+                <input type="text" className="form-control mb-2" id="name" placeholder="First Name" />
               </div>
 
               <div className="col-auto mb-4">
                 <label htmlFor='mail'>
                   メールアドレス
         </label>
-                <input type="text" class="form-control mb-2" id="mail" placeholder="Mail Address" />
+                <input type="text" className="form-control mb-2" id="mail" placeholder="Mail Address" />
 
               </div>
 
@@ -59,24 +59,24 @@ const ContactPage = () => {
                   内容
         </label>
 
-                <textarea type="text" class="form-control mb-2" id="inquiry" placeholder="Inquiry" />
+                <textarea type="text" className="form-control mb-2" id="inquiry" placeholder="Inquiry" />
               </div>
 
-              <div class="col-auto mb-4">
-                <button type="submit" class="btn btn-primary mb-2">送信</button>
+              <div className="col-auto mb-4">
+                <button type="submit" className="btn btn-primary mb-2">送信</button>
 
-              </div>
+              </div >
 
-            </form>
-          </div>
-        </div>
-        <div class='row my-4'>
-          <div class='col'>
+            </form >
+          </div >
+        </div >
+        <div className='row my-4' >
+          <div className='col' >
             <Bio />
-          </div>
-        </div>
-      </div>
-    </Layout>
+          </div >
+        </div >
+      </div >
+    </Layout >
   )
 }
 

@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 
@@ -60,15 +60,16 @@ const Bio = () => {
     <div>
       <h2>about me</h2>
 
-      <div class='bio'>
+      <div className='bio'>
         {avatar_img}
         <p>
           {author.name}<br></br>
-          うんこ製造機<br></br>
-          <Link to={twitter_link} >Twitter</Link>
+          音楽と絵とデザイン、本業無職。<br></br>
+          元プリパラアイドルの女子中学生(自称)です<br></br>
+          <a href={twitter_link} >Twitter</a>
         </p>
       </div >
-    </div>
+    </div >
   )
 }
 

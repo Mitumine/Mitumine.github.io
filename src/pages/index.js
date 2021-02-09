@@ -14,8 +14,8 @@ const BlogIndex = ({ data }) => {
     <Layout>
       <SEO title="home" />
       <h2>Pickup</h2>
-      <div class='container'>
-        <div class='row my-4'>
+      <div className='container'>
+        <div className='row my-4 card-deck row-eq-height'>
           {edges.map(({ node }) => {
             const { slug } = node.fields
             const _title = node.frontmatter.title
@@ -29,25 +29,25 @@ const BlogIndex = ({ data }) => {
             )
 
             return (
-              <div class='col-4  mb-4'>
-                <div class="card">
-                  <Link to={slug} class='card-link'>
+              <div className='col-4  mb-4'>
+                <div className="card">
+                  <Link to={slug} className='card-link'>
                     <Image fluid={thumbnail_image} className="card-img-top" />
                   </Link>
-                  <div class="card-body">
-                    <Link to={slug} class='card-link'>
-                      <h5 class="card-title">{_title}</h5>
-                      <h6 class="card-subtitle text-muted">{_date}</h6>
-                      <p class="card-text">{_description}</p>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+                  <div className="card-body" >
+                    <Link to={slug} className='card-link' >
+                      <h5 className="card-title" > {_title}</h5 >
+                      <h6 className="card-subtitle text-muted" > {_date}</h6 >
+                      <p className="card-text" > {_description}</p >
+                    </Link >
+                  </div >
+                </div >
+              </div >
 
             )
           })}
-        </div>
-      </div>
+        </div >
+      </div >
       <Bio />
 
     </Layout >
@@ -59,7 +59,7 @@ export default BlogIndex
 
 export const pageQuery = graphql`
 {
-  def_image: file(absolutePath: {regex: "./defalt.png/"}) {
+  def_image: file(absolutePath: {regex: "./default.png/"}) {
     childImageSharp {
       fluid(maxHeight: 1000) {
         ...GatsbyImageSharpFluid
@@ -84,7 +84,6 @@ export const pageQuery = graphql`
               }
             }
           }
-
         }
       }
     }
