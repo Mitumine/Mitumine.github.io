@@ -1,11 +1,11 @@
 ---
 title: Lifeworks弾いてみた
-date: "2013"
+date: "2021/02"
 description: "log"
-tags: ['log']
-thumbnail: assets/default.png
+tags: ["log"]
+thumbnail: ./0.jpg
 ---
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/WbwXgnUkTx8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-椎名もたのLifeworksを弾きました。
+椎名もたの Lifeworks を弾きました。
