@@ -71,33 +71,33 @@ function SEO({ description, lang, meta, title, imageSource, imageAlt }) {
         .concat(
           imageSource
             ? [
-              {
-                name: `og:image`,
-                content: image,
-              },
-              {
-                name: `og:image:alt`,
-                content: imageAltText,
-              },
-              {
-                name: `twitter:image`,
-                content: image,
-              },
-              {
-                name: `twitter:image:alt`,
-                content: imageAltText,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary_large_image`,
-              },
-            ]
+                {
+                  name: `og:image`,
+                  content: image,
+                },
+                {
+                  name: `og:image:alt`,
+                  content: imageAltText,
+                },
+                {
+                  name: `twitter:image`,
+                  content: image,
+                },
+                {
+                  name: `twitter:image:alt`,
+                  content: imageAltText,
+                },
+                {
+                  name: `twitter:card`,
+                  content: `summary_large_image`,
+                },
+              ]
             : [
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-            ]
+                {
+                  name: `twitter:card`,
+                  content: `summary`,
+                },
+              ]
         )
         .concat(meta)}
     />
