@@ -100,14 +100,15 @@ bootstrap でカードの高さを揃えるには
 
 ### トラブルシューティング
 
-
 - `Field "thumbnail" must not have a selection since type "String" has no subfields.`とか出てきた
 
   - 画像のパスがどこかで間違えていませんか、ブログの記事の中の指定とか、テンプレートでとりあえずおいてみた記事の中身とか…
+  - > [Gatsby\.js と Netlify CMS を用いてブログを作る際に知っておきたかった事 \- CodeLabo](https://codelabo.com/posts/20200329163855)
 
 - `Error: Input file contains unsupported image format`
 
   - なんかファイル名が「gatsby」だと駄目と言われる時があるらしいです。  
-    僕の場合だと、フォルダで`gatsby`を用意していたので、これを撤廃したら通りました。
+    僕の場合だと、フォルダで`gatsby`という名前を使用していたので、これを撤廃したら通りました。  
+    代替案として`gtb`なんてどうでしょう、僕はそうしました。
 
-  > [Error: Input file contains unsupported image format, gatsby \- Support \- Netlify Community](https://community.netlify.com/t/error-input-file-contains-unsupported-image-format-gatsby/10891/4)
+  - > [Error: Input file contains unsupported image format, gatsby \- Support \- Netlify Community](https://community.netlify.com/t/error-input-file-contains-unsupported-image-format-gatsby/10891/4)
