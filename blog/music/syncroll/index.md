@@ -2,12 +2,11 @@
 title: シンクロール
 date: "2020/10"
 description: "Rock"
-tags: ['music']
-thumbnail: ./0.jpg
+tags: ["music"]
+thumbnail: 0.jpg
 ---
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/p4lQ2esEVBg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
----
+## <iframe width="1280" height="720" src="https://www.youtube.com/embed/p4lQ2esEVBg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Vocal by 東北きりたん(NEUTRINO)
 illustration by sotono

@@ -3,7 +3,7 @@ title: ずれてゆく
 date: "2015"
 description: ""
 tags: ["graphic"]
-thumbnail: ./0.png
+thumbnail: 0.png
 ---
 
 ![1](./1.png)

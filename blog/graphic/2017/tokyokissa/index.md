@@ -3,7 +3,7 @@ title: 東京喫茶
 date: "2017"
 description: "Typography"
 tags: ["graphic"]
-thumbnail: ./0.png
+thumbnail: 0.png
 ---
 
 ![1](./1.png)

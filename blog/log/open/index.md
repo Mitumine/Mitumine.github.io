@@ -3,7 +3,7 @@ title: Website open
 date: "2021/02"
 description: "log"
 tags: ["log"]
-# thumbnail: ../assets/default.png
+# thumbnail: 0.png
 ---
 
 ホームページを作りました。

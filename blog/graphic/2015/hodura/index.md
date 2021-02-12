@@ -2,8 +2,8 @@
 title: a Hodura
 date: "2015"
 description: "Logo"
-tags: ['graphic']
-thumbnail: ./0.png
+tags: ["graphic"]
+thumbnail: 0.png
 ---
 
 ![1](./1.png)

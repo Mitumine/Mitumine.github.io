@@ -2,8 +2,8 @@
 title: フチメガネの日情景
 date: "2013"
 description: "Rock"
-tags: ['music']
-thumbnail: ./0.jpg
+tags: ["music"]
+thumbnail: 0.jpg
 ---
 
 <iframe width="720" height="405" src="https://www.youtube.com/embed/WxImXHxoJEw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -17,7 +17,7 @@ Vocal by 初音ミク<br>
 
 ありふれた感情論、振りかざして音を上げて<br>
 エゴスティックで着飾った、パーカーを羽織った<br>
-お気に入りのipod、イヤホンに閉じこもり<br>
+お気に入りの ipod、イヤホンに閉じこもり<br>
 シャッフル即スキップ、嫌いな曲ばっかだ<br>
 <br>
 白黒でハッキリつけた罪悪感を飲み干して<br>
@@ -37,7 +37,7 @@ Vocal by 初音ミク<br>
 いつまでたっても変わらない、日常を蹴飛ばして<br>
 望んでいた非日常、慣れてしまえば日常で<br>
 ありふれている物語、僕はその主人公<br>
-傍から見れば少年A<br>
+傍から見れば少年 A<br>
 五月蝿いよ、消えてくれ<br>
 <br>
 淡々と剥がれていった自分の未来も捨てちゃって<br>

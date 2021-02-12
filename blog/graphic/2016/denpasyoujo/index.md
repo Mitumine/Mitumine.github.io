@@ -2,8 +2,8 @@
 title: 電波少女
 date: "2016"
 description: "Mix"
-tags: ['graphic','pickup']
-thumbnail: ./0.png
+tags: ["graphic", "pickup"]
+thumbnail: 0.png
 ---
 
 卒業制作作品「電波少女」

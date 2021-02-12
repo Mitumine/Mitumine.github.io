@@ -2,8 +2,8 @@
 title: グルメガネの普遍論 (旧)
 date: "2013"
 description: "Rock"
-tags: ['music']
-thumbnail: ./0.jpg
+tags: ["music"]
+thumbnail: 0.jpg
 ---
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/ok8jtaN-gPE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

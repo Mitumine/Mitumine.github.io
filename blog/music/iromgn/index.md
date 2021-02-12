@@ -2,12 +2,11 @@
 title: イロメガネの人生論
 date: "2021/01"
 description: "Rock"
-tags: ['music','pickup']
-thumbnail: ./0.jpg
+tags: ["music", "pickup"]
+thumbnail: 0.jpg
 ---
 
-<iframe width="720" height="405" src="https://www.youtube.com/embed/KFBYnI13tKk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
----
+## <iframe width="720" height="405" src="https://www.youtube.com/embed/KFBYnI13tKk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Vocal by 初音ミク<br>
 illustration by sotono<br>
@@ -50,7 +49,7 @@ illustration by sotono<br>
 「誰かと同じ色に染まることが怖くて怖くて仕方ないんだ<br>
 しまった！しまった！しまった！しまった！<br>
 しまった！しまった！しまった！しまった！<br>
-何色にも染まれないまま、ねえ。   <br>
+何色にも染まれないまま、ねえ。 <br>
 大人になってしまったんだけどさ！」<br>
 <br>
 色眼鏡ごしの世界で、過ごしていくのに疲れて<br>
