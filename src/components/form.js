@@ -16,7 +16,7 @@ const ContactPage = () => (
             name="bot-field"
             type="hidden"
             className="form-control mb-2"
-            value="conact"
+            value="contact"
             placeholder="Don't fill"
           />
 
