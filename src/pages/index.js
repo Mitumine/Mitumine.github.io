@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Bio from "../components/bio"
-import Cards from "../components/Cards"
+import Cards from "../components/cards"
 
 const BlogIndex = ({ data }) => {
   return (
