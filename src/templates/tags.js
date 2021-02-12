@@ -6,11 +6,12 @@ import SEO from "../components/seo"
 import Bio from "../components/bio"
 import Cards from "../components/Cards"
 
-const BlogIndex = ({ data }) => {
+const BlogIndex = ({ pageContext, data }) => {
+  const { tag } = pageContext
   return (
     <Layout>
-      <SEO title="home" />
-      <h2>Pickup</h2>
+      <SEO title={tag} />
+      <h2>{tag}</h2>
       <Cards items={data.portfolio.nodes} />
       <Bio />
     </Layout>
