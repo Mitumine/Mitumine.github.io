@@ -12,11 +12,12 @@ const ContactPage = () => (
           data-netlify-honeypot="bot-field"
         >
           {/* You still need to add the hidden input with the form name to your JSX form */}
+          <input type="hidden" name="form-name" value="contact" />
+
           <input
             name="bot-field"
             type="hidden"
             className="form-control mb-2"
-            value="contact"
             placeholder="Don't fill"
           />
 
