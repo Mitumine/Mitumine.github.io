@@ -86,5 +86,15 @@ bootstrap でカードの高さを揃えるには
 ---
 
 ## フラグメント
+
 同じクエリを何度も書くのはめんどくさいしメンテナンスがめちゃくちゃなので、
 フラグメントってやつを使って一元化しちゃいましょう。
+
+[Using GraphQL Fragments \| Gatsby](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/using-graphql-fragments/)
+
+
+## Google アナリティクス導入
+
+
+
+[gatsby\-plugin\-google\-analytics \| Gatsby](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/#make-sure-plugin-and-script-are-loaded-first)

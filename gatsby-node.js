@@ -6,66 +6,61 @@ const _ = require("lodash")
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-
-
   // Define a template for blog post
   const blogPostTemplate = path.resolve(`./src/templates/post.js`)
   const tagTemplate = path.resolve("src/templates/tags.js")
 
   const result = await graphql(`
-  {
-    postsRemark: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, limit: 2000) {
-      edges {
-        node {
-          frontmatter {
-            tags
-            title
-            date
-            description
-            thumbnail {
-              childImageSharp {
-                fluid(maxWidth: 1280) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
+    {
+      postsRemark: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 2000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              tags
+              title
+              date
+              description
+              thumbnail {
+                childImageSharp {
+                  fluid(maxWidth: 1280) {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
                 }
               }
             }
+            fileAbsolutePath
+            fields {
+              slug
+            }
           }
-          fileAbsolutePath
+        }
+        nodes {
+          id
           fields {
             slug
           }
         }
       }
-      nodes {
-        id
-        fields {
-          slug
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
         }
       }
     }
-    tagsGroup: allMarkdownRemark(limit: 2000) {
-      group(field: frontmatter___tags) {
-        fieldValue
-      }
-    }
-  }
-  
-  
   `)
-
-
-
 
   // handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-
 
   // Create post detail pages
   const edges = result.data.postsRemark.edges
@@ -137,31 +132,24 @@ exports.createSchemaCustomization = ({ actions }) => {
       siteUrl: String
       social: Social
     }
-
     type Author {
       name: String
       summary: String
     }
-
     type Social {
       twitter: String
     }
-
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
       fields: Fields
     }
-
     type Frontmatter {
       title: String
       description: String
       date: Date @dateformat
     }
-
     type Fields {
       slug: String
     }
   `)
 }
-
-

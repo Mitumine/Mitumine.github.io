@@ -3,7 +3,6 @@ import React from "react"
 import Card from "../components/Card"
 
 const Cards = ({ items }) => {
-  console.log(`items ${items}`)
 
   return (
     <div className="container">
