@@ -100,8 +100,15 @@ bootstrap でカードの高さを揃えるには
 
 ### トラブルシューティング
 
+#### 大文字小文字の区別ついてる？
+
+Q,以下のようなエラーが出ました
+
 ```
 error Generating JavaScript bundles failed
 Can't resolve '../components/Cards' in '/opt/build/repo/src/pages'
 If you're trying to use a package make sure that '../components/Cards' is installed. If you're trying to use a local file make sure that the path is correct.
 ```
+
+A. 僕の場合ですが、大文字小文字でミスってました。  
+`card`を指定したつもりが`Card`になっていたので直したら通りました。

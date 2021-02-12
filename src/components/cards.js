@@ -1,9 +1,8 @@
 import PropTypes from "prop-types"
 import React from "react"
-import Card from "../components/Card"
+import Card from "../components/card"
 
 const Cards = ({ items }) => {
-
   return (
     <div className="container">
       <div className="row my-3">
