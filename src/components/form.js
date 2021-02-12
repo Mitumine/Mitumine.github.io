@@ -4,12 +4,25 @@ const ContactPage = () => (
   <div className="container">
     <div className="row">
       <div className="col-6">
-        <form name="contact" method="POST" netlify>
+        <form
+          name="contact"
+          method="POST"
+          action="/thanks"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input
+            name="bot-field"
+            type="hidden"
+            className="form-control mb-2"
+            placeholder="Don't fill"
+          />
+
           <label htmlFor="name">お名前</label>
           <input
             type="text"
             className="form-control mb-2"
-            id="name"
+            name="name"
             placeholder="First Name"
           />
 
@@ -17,7 +30,7 @@ const ContactPage = () => (
           <input
             type="text"
             className="form-control mb-2"
-            id="email"
+            name="email"
             placeholder="Mail Address"
           />
 
@@ -25,7 +38,7 @@ const ContactPage = () => (
           <textarea
             type="text"
             className="form-control mb-2"
-            id="inquiry"
+            name="inquiry"
             placeholder="Inquiry"
           />
 
