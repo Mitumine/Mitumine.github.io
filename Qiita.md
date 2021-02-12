@@ -92,9 +92,16 @@ bootstrap でカードの高さを揃えるには
 
 [Using GraphQL Fragments \| Gatsby](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/using-graphql-fragments/)
 
-
 ## Google アナリティクス導入
 
-
-
 [gatsby\-plugin\-google\-analytics \| Gatsby](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/#make-sure-plugin-and-script-are-loaded-first)
+
+## Netlify でデプロイするぞ
+
+### トラブルシューティング
+
+- `Field "thumbnail" must not have a selection since type "String" has no subfields.`とか出てきた
+
+  - 画像のパスがどこかで間違えていませんか、ブログの記事の中の指定とか、テンプレートでとりあえずおいてみた記事の中身とか…
+
+- `Error: Input file contains unsupported image format`
