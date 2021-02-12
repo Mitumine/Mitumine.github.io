@@ -11,10 +11,12 @@ const ContactPage = () => (
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
+          {/* You still need to add the hidden input with the form name to your JSX form */}
           <input
             name="bot-field"
             type="hidden"
             className="form-control mb-2"
+            value="conact"
             placeholder="Don't fill"
           />
 
@@ -28,18 +30,18 @@ const ContactPage = () => (
 
           <label htmlFor="email">メールアドレス</label>
           <input
-            type="text"
+            type="email"
             className="form-control mb-2"
             name="email"
             placeholder="Mail Address"
           />
 
-          <label htmlFor="inquiry">内容</label>
+          <label htmlFor="message">内容</label>
           <textarea
             type="text"
             className="form-control mb-2"
-            name="inquiry"
-            placeholder="Inquiry"
+            name="message"
+            placeholder="message"
           />
 
           <button type="submit" className="btn btn-primary mb-2">
