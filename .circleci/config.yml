@@ -1,8 +1,5 @@
-version: 2.1
-orbs:
-  node: circleci/node@1.1.6
-jobs:
-  # ジョブの名前（なんでもいいです）
+ version: 2
+ jobs:
   test-build-deploy:
     executor:
       name: node/default
@@ -19,13 +16,3 @@ jobs:
             - run: yarn add netlify-cli
             # デプロイ（詳細は後述します）
             - run: yarn netlify deploy -p -d build -a ${NETLIFY_AUTH_TOKEN} -s ${NETLIFY_SITE_ID}
-
-workflows:
-  test-build-deploy:
-    jobs:
-      # filtersの設定は必須ではありません。
-      # filtersを設定しない場合は、pushした際にブランチ問わずCircleCIが稼働します。
-      - build-and-test:
-          filters:
-            branches:
-              only: main
