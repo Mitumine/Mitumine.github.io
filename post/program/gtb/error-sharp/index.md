@@ -3,8 +3,10 @@ title: 【Gatsby.js】対処しよう、「Input file contains unsupported image
 date: "2021/02/12"
 description: "Gatsby"
 tags: ["program"]
-thumbnail: 0.png s
+thumbnail: 0.png
 ---
+
+![0.png](0.png)
 
 # 概要
 

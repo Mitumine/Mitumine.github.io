@@ -13,6 +13,7 @@ module.exports = {
   },
 
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -29,8 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/blog`,
-        name: `blog`,
+        path: `${__dirname}/post`,
+        name: `post`,
       },
     },
     {
@@ -82,5 +83,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-twitter`,
   ],
 }

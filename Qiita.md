@@ -1,3 +1,5 @@
+
+
 # 備忘録
 
 ## const がわからん
@@ -71,6 +73,46 @@ SocialImage？というものが必要らしいので設定していく。
 md 内で指定してるパスを間違えているとエラーを履くみたい。
 [Gatsby\.js と Netlify CMS を用いてブログを作る際に知っておきたかった事 \- CodeLabo](https://codelabo.com/posts/20200329163855)
 
+# Twitter を埋め込みたい
+
+普通に埋め込みをコピペすると以下のような表示になります。
+
+> 「-1」
+>
+> ゼロより遠いところから始まる僕の歌。  
+> ピコピコ少年的な曲です。
+>
+> Youtube:https://t.co/Pa6Skw5KBC  
+> Nico:https://t.co/HwQ1mnzygO#vocaloPost #vocaloid #AI きりたん #NEUTRINO #拡散希望 pic.twitter.com/>OkCvCwS042
+>
+> — Sotono. (@\_Sotono) January 20, 2021
+
+うーん、これでは見栄えが悪い。  
+引用したいんだけど、俺は**埋め込みたい**んだ
+
+というわけで、プラグインをインストールします。
+
+```sh
+$ npm install --save gatsby-plugin-twitter
+```
+
+プラグインを導入したので、`gatsby-config.js`をいじります。
+やることは簡単。
+
+- `plugins`の欄に、
+- `gatsby-plugin-twitter`を挿入する。
+
+```js:title=gatsby-config.js
+  plugins: [
+    // 省略
+    `gatsby-plugin-twitter`,
+  ]
+```
+
+これでようやく Twitter を埋め込むことができます。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「-1」<br><br>ゼロより遠いところから始まる僕の歌。<br>ピコピコ少年的な曲です。<br><br>Youtube:<a href="https://t.co/Pa6Skw5KBC">https://t.co/Pa6Skw5KBC</a><br>Nico:<a href="https://t.co/HwQ1mnzygO">https://t.co/HwQ1mnzygO</a><a href="https://twitter.com/hashtag/vocaloPost?src=hash&amp;ref_src=twsrc%5Etfw">#vocaloPost</a> <a href="https://twitter.com/hashtag/vocaloid?src=hash&amp;ref_src=twsrc%5Etfw">#vocaloid</a> <a href="https://twitter.com/hashtag/AI%E3%81%8D%E3%82%8A%E3%81%9F%E3%82%93?src=hash&amp;ref_src=twsrc%5Etfw">#AIきりたん</a> <a href="https://twitter.com/hashtag/NEUTRINO?src=hash&amp;ref_src=twsrc%5Etfw">#NEUTRINO</a> <a href="https://twitter.com/hashtag/%E6%8B%A1%E6%95%A3%E5%B8%8C%E6%9C%9B?src=hash&amp;ref_src=twsrc%5Etfw">#拡散希望</a> <a href="https://t.co/OkCvCwS042">pic.twitter.com/OkCvCwS042</a></p>&mdash; Sotono. (@_Sotono) <a href="https://twitter.com/_Sotono/status/1351848364778799104?ref_src=twsrc%5Etfw">January 20, 2021</a></blockquote>
+
 # カードのサイズを揃えよう
 
 bootstrap でカードの高さを揃えるには
@@ -94,6 +136,8 @@ bootstrap でカードの高さを揃えるには
 
 ## Google アナリティクス導入
 
+プラグインを導入するだけでイケるらしいので、導入アンド config 追記。
+
 [gatsby\-plugin\-google\-analytics \| Gatsby](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/#make-sure-plugin-and-script-are-loaded-first)
 
 ## Netlify でデプロイするぞ
@@ -102,7 +146,7 @@ bootstrap でカードの高さを揃えるには
 
 #### 大文字小文字の区別ついてる？
 
-Q,以下のようなエラーが出ました
+Q,`Netlify`でビルドしてたら以下のようなエラーが出ました
 
 ```
 error Generating JavaScript bundles failed
@@ -112,3 +156,14 @@ If you're trying to use a package make sure that '../components/Cards' is instal
 
 A. 僕の場合ですが、大文字小文字でミスってました。  
 `card`を指定したつもりが`Card`になっていたので直したら通りました。
+
+#### パッケージのバージョン大丈夫？
+
+Q. `Netlify`でビルドしてたら以下のようなエラーが出ました
+
+```
+Error: Input file contains unsupported image format
+```
+
+A. 僕の場合ですが、パッケージをすべて最新版にしたら直りました。
+[詳しくは別記事で解説します。](../error-sharp)
