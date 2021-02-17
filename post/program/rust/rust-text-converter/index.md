@@ -1,6 +1,6 @@
 ---
 title: Pythonerが、ゼロからRustで、Printとinputを使いたいの巻
-date: "2021/02/"
+date: "2021/02/17"
 description: "Rust"
 tags: ["program", "Rust"]
 thumbnail: 0.png

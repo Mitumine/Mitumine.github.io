@@ -26,9 +26,16 @@ const ContactPage = () => {
     <Layout>
       <SEO title="contact" />
       <h2>Contact Form</h2>
-      <Form />
-      <h2>Contact Form</h2>
-      <Link to={twitter_link}>Twitter</Link>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSf3bnKN7pZmKqpOyJJtO4kkmmUHZYsxlOTBnLoXYbENQ53R6A/viewform?embedded=true"
+        width="100%"
+        height="1000"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+      >
+        読み込んでいます…
+      </iframe>
       <Bio />
     </Layout>
   )

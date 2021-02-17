@@ -1,6 +1,6 @@
 ---
 title: Pythonﾁｮｯﾄﾜｶﾙから始めるRust入門
-date: "2021/02/"
+date: "2021/02/16"
 description: "Rust"
 tags: ["program", "Rust"]
 thumbnail: 0.png
