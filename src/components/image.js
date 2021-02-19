@@ -15,9 +15,6 @@ export default props => {
       }
     }
   `)
-
-
-
   return (
     <figure className={props.className} style={props.style}>
       <Img

@@ -1,14 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Sotono`,
+    title: `Sotono.tk`,
     author: {
-      name: `sotono`,
+      name: `Sotono`,
       summary: `aho`,
     },
-    description: `A unko`,
+    description: `Works by Sotono.`,
     siteUrl: `https://www.example.com`,
     social: {
       twitter: `https://twitter.com/_Sotono`,
+      tiktok: `https://www.tiktok.com/@_sotono?lang=ja-JP`,
+      youtube: `https://www.youtube.com/channel/UCyoznA69iCeorZRLBSH3oOg`,
     },
   },
 

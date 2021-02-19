@@ -1,16 +1,6 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
-
-
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -30,6 +20,8 @@ const Bio = () => {
           }
           social {
             twitter
+            tiktok
+            youtube
           }
         }
       }
@@ -42,6 +34,8 @@ const Bio = () => {
   const avatar = data?.avatar?.childImageSharp?.fixed
 
   const twitter_link = social?.twitter
+  const tiktok_link = social?.tiktok
+  const youtube_link = social?.youtube
 
   const avatar_img = (
     <Image
@@ -54,22 +48,23 @@ const Bio = () => {
     />
   )
 
-
-
   return (
     <div>
       <h2>about me</h2>
-
-      <div className='bio'>
+      <div className="bio">
         {avatar_img}
         <p>
-          {author.name}<br></br>
+          <h3>{author.name}</h3>
           音楽と絵とデザイン、本業無職。<br></br>
           元プリパラアイドルの女子中学生(自称)です<br></br>
-          <a href={twitter_link} >Twitter</a>
+          <br></br>
+          <h3>Link</h3>
+          <a href={twitter_link}>Twitter</a>,&nbsp;
+          <a href={tiktok_link}>Tiktok</a>,&nbsp;
+          <a href={youtube_link}>Youtube</a>,&nbsp;
         </p>
-      </div >
-    </div >
+      </div>
+    </div>
   )
 }
 

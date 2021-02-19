@@ -1,6 +1,6 @@
 ---
 title: Website open
-date: "2021/02"
+date: "2021/02/19"
 description: "log"
 tags: ["log"]
 # thumbnail: 0.png

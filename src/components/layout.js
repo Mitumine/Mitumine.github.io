@@ -1,12 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
-function Layout({ title, children }) {
-  // const rootPath = `${__PATH_PREFIX__}/`
+function Layout({ children }) {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
+  const sitetitle = data.site.siteMetadata?.title
+
   const header = (
     <header className="global-header">
       <h1 className="main-heading">
-        <Link to="/">Sotono.works</Link>
+        <Link to="/">{sitetitle}</Link>
       </h1>
       <div className="container">
         <div className="row my-4">
