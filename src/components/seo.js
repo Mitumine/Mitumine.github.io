@@ -14,7 +14,7 @@ function SEO({ description, lang, meta, title, imageSource, imageAlt }) {
   const { site } = useStaticQuery(
     graphql`
       query {
-        og_img: file(absolutePath: { regex: "/icon_160x160.png/" }) {
+        file(absolutePath: { regex: "/icon_160x160.png/" }) {
           childImageSharp {
             fixed(width: 50, height: 50, quality: 95) {
               ...GatsbyImageSharpFixed
@@ -35,7 +35,7 @@ function SEO({ description, lang, meta, title, imageSource, imageAlt }) {
   const metaDescription = description || site.siteMetadata.description
   const image = imageSource
     ? `${site.siteMetadata.siteUrl}${imageSource}`
-    : site.og_img
+    : site.file.childImageSharp.fixed
   const imageAltText = imageAlt || metaDescription
 
   return (
