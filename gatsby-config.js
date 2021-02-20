@@ -6,7 +6,7 @@ module.exports = {
       summary: `aho`,
     },
     description: `Works by Sotono.`,
-    siteUrl: `https://www.example.com`,
+    siteUrl: `https://sotono.tk`,
     social: {
       twitter: `https://twitter.com/_Sotono`,
       tiktok: `https://www.tiktok.com/@_sotono?lang=ja-JP`,

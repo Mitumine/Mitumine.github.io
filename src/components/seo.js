@@ -14,13 +14,6 @@ function SEO({ description, lang, meta, title, imageSource, imageAlt }) {
   const { site } = useStaticQuery(
     graphql`
       query {
-        file(absolutePath: { regex: "/icon_160x160.png/" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50, quality: 95) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
         site {
           siteMetadata {
             title
@@ -33,9 +26,7 @@ function SEO({ description, lang, meta, title, imageSource, imageAlt }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const image = imageSource
-    ? `${site.siteMetadata.siteUrl}${imageSource}`
-    : site.file.childImageSharp.fixed
+  const image = `${site.siteMetadata.siteUrl}/icon_160x160.png/`
   const imageAltText = imageAlt || metaDescription
 
   return (
@@ -44,7 +35,7 @@ function SEO({ description, lang, meta, title, imageSource, imageAlt }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s // ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -74,39 +65,32 @@ function SEO({ description, lang, meta, title, imageSource, imageAlt }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ]
-        .concat(
-          imageSource
-            ? [
-                {
-                  name: `og:image`,
-                  content: image,
-                },
-                {
-                  name: `og:image:alt`,
-                  content: imageAltText,
-                },
-                {
-                  name: `twitter:image`,
-                  content: image,
-                },
-                {
-                  name: `twitter:image:alt`,
-                  content: imageAltText,
-                },
-                {
-                  name: `twitter:card`,
-                  content: `summary_large_image`,
-                },
-              ]
-            : [
-                {
-                  name: `twitter:card`,
-                  content: `summary`,
-                },
-              ]
-        )
-        .concat(meta)}
+
+        {
+          name: `og:image`,
+          content: image,
+        },
+        {
+          name: `og:image:alt`,
+          content: imageAltText,
+        },
+        {
+          name: `twitter:image`,
+          content: image,
+        },
+        {
+          name: `twitter:image:alt`,
+          content: imageAltText,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+      ].concat(meta)}
     />
   )
 }
