@@ -19,7 +19,7 @@ function SEO({ title, description, image, lang }) {
             twitterUsername
           }
         }
-        file(absolutePath: { regex: "/icon_160x160.png/" }) {
+        file(absolutePath: { regex: "/icon_card.png/" }) {
           childImageSharp {
             fluid {
               src
