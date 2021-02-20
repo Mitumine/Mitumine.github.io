@@ -7,6 +7,7 @@ module.exports = {
     },
     description: `Works by Sotono.`,
     siteUrl: `https://sotono.tk`,
+    twitterUsername: `@_sotono`,
     social: {
       twitter: `https://twitter.com/_Sotono`,
       tiktok: `https://www.tiktok.com/@_sotono?lang=ja-JP`,

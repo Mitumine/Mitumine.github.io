@@ -1,111 +1,81 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+//components/seo.js
 
 import React from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, imageSource, imageAlt }) {
-  const { site } = useStaticQuery(
+function SEO({ title, description, image, lang }) {
+  const { pathname } = useLocation()
+  const { site, file } = useStaticQuery(
     graphql`
-      query {
+      {
         site {
           siteMetadata {
-            title
-            description
+            defaultTitle: title
+            defaultDescription: description
             siteUrl
+            twitterUsername
+          }
+        }
+        file(absolutePath: { regex: "/icon_160x160.png/" }) {
+          childImageSharp {
+            fluid {
+              src
+            }
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const image = `${site.siteMetadata.siteUrl}/icon_160x160.png/`
-  const imageAltText = imageAlt || metaDescription
+  const {
+    defaultTitle,
+    defaultDescription,
+    siteUrl,
+    twitterUsername,
+  } = site.siteMetadata
+
+  const seo = {
+    title: `${title || defaultTitle}`,
+    description: description || defaultDescription,
+    image: `${siteUrl}${file.childImageSharp.fluid.src}`,
+    url: `${siteUrl}${pathname}`,
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s // ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-
-        {
-          name: `og:image`,
-          content: image,
-        },
-        {
-          name: `og:image:alt`,
-          content: imageAltText,
-        },
-        {
-          name: `twitter:image`,
-          content: image,
-        },
-        {
-          name: `twitter:image:alt`,
-          content: imageAltText,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-      ].concat(meta)}
-    />
+    <Helmet>
+      <title>{seo.title} | Sotono.tk</title>
+      <html lang="ja" />
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:image" content={seo.image} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content={twitterUsername} />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+    </Helmet>
   )
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
+SEO.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  lang: PropTypes.string,
 }
 
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  title: PropTypes.string.isRequired,
-  imageSource: PropTypes.string,
+SEO.defaultProps = {
+  title: null,
+  description: null,
+  image: null,
+  lang: null,
 }
 
 export default SEO
