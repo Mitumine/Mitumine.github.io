@@ -59,7 +59,7 @@ const Bio = () => {
           元プリパラアイドルの女子中学生(自称)です<br></br>
           <br></br>
           <h3>Link</h3>
-          <a href={twitter_link}>Twitter</a>,&nbsp;
+          {/* <a href={twitter_link}>Twitter</a>,&nbsp; */}
           <a href={tiktok_link}>Tiktok</a>,&nbsp;
           <a href={youtube_link}>Youtube</a>,&nbsp;
         </p>
