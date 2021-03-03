@@ -47,12 +47,13 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
-  --color-text: #2e353f;
-  --color-text-light: #4f5969;
+  --color-primary: #fb32fb;
+  --color-text: #1a202c;
+  --color-text-light: #1a202c;
   --color-heading: #1a202c;
-  --color-heading-black: black;
+  --color-heading-black: #1a202c;
   --color-accent: #d1dce5;
+
 }
 
 /* HTML elements */
@@ -322,15 +323,48 @@ a:focus {
 
 /* こっからオリジナル */
 
+
+:root{
+  --neon-color:#fb32fb;
+  --selection-color:#ffffff;
+}
+
+
+a:hover{
+  background :var(--neon-color);
+  color: var(--selection-color);
+}
+
 .card{
   text-decoration: none;
-}
-
-
-
-.card{
   height:100%;
 }
+
+.card a{
+  text-decoration: none;
+  color:black;
+  background:#ffffff;
+}
+
+.card:hover{
+  text-decoration: none;
+  color: var(--neon-color);
+  background:#ffffff;
+  border-color:var(--neon-color);
+}
+
+
+::selection{
+  background :var(--neon-color);
+  color: var(--selection-color);
+}
+
+::-moz-selection {
+  background: var(--neon-color);
+  color: var(--selection-color);
+}
+
+
 
 /* prism */
 
