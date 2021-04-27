@@ -53,6 +53,7 @@ const Bio = () => {
       <h2>about me</h2>
       <div className="bio">
         {avatar_img}
+
         <p>
           <h3>{author.name}</h3>
           音楽と絵とデザイン、本業無職。<br></br>
