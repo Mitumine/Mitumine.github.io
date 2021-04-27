@@ -6,7 +6,7 @@ tags: ["music"]
 thumbnail: 0.jpg
 ---
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ok8jtaN-gPE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1264" height="720" src="https://www.youtube.com/embed/LTOoMqAXIeI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 

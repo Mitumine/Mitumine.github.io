@@ -2,12 +2,12 @@ import React from "react"
 
 import Layout from "../components/layout"
 import Bio from "../components/bio"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const ContactPage = () => {
   return (
     <Layout>
-      <SEO title="contact" />
+      <Seo title="contact" />
       <h2>Contact Form</h2>
       <iframe
         title="form"

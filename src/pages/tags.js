@@ -8,10 +8,9 @@ import kebabCase from "lodash/kebabCase"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const TagsPage = ({
-
   data: {
     allMarkdownRemark: { group },
     site: {
@@ -20,7 +19,7 @@ const TagsPage = ({
   },
 }) => (
   <Layout title={siteTitle}>
-    <SEO title={siteTitle} />
+    <Seo title={siteTitle} />
     <div>
       <div>
         <h2>Tags</h2>
@@ -30,7 +29,7 @@ const TagsPage = ({
             <li key={tag.fieldValue}>
               <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                 {tag.fieldValue} ({tag.totalCount})
-            </Link>
+              </Link>
             </li>
           ))}
         </ul>

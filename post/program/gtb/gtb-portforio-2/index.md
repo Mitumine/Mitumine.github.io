@@ -215,11 +215,11 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <Seo title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
@@ -248,7 +248,7 @@ export default IndexPage
 ```js:index.js
 const IndexPage = () => (
   <Layout>
-    <SEO title="Using TypeScript" />
+    <Seo title="Using TypeScript" />
     <h1>Gatsby supports TypeScript by default!</h1>
     <p>
       This means that you can create and write <em>.ts/.tsx</em> files for your
@@ -286,7 +286,7 @@ const IndexPage = () => (
 ```js:index.js
 const IndexPage = () => (
   <Layout>
-    <SEO title="Using TypeScript" />
+    <Seo title="Using TypeScript" />
     <h1>俺のホームページだ！！！！</h1>
     <Link to="/">Go back to the homepage</Link>
   </Layout>

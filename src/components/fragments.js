@@ -1,3 +1,5 @@
+import { graphql } from "gatsby"
+
 export const query = graphql`
   fragment PortfolioCard on MarkdownRemark {
     fields {
@@ -10,9 +12,7 @@ export const query = graphql`
       title
       thumbnail {
         childImageSharp {
-          fluid(maxHeight: 1000) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
         }
       }
     }

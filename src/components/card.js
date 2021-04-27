@@ -1,7 +1,6 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
-import Image from "../components/image"
+import { Link } from "gatsby"
+import { GatsbyImage, StaticImage,getImage } from "gatsby-plugin-image"
 
 const Card = ({ fields, frontmatter }) => {
   // fieldsをバラす
@@ -12,19 +11,21 @@ const Card = ({ fields, frontmatter }) => {
   const description = frontmatter.description
   // const tags = frontmatter.tags
   const title = frontmatter.title
-  const thumbnail = frontmatter.thumbnail
+  const thumbnail = getImage(frontmatter.thumbnail)
 
-  // サムネイル設定
-  const thumbnail_image = thumbnail ? thumbnail.childImageSharp.fluid : null
-
+  // サムネイルの設定
   let img_code
-  if (thumbnail_image == null) {
+  if (thumbnail == null) {
     img_code = (
-      <Image filename="default.png" alt={title} className="card-img-top" />
+      <StaticImage
+        src="../images/default.png/"
+        alt={title}
+        className="card-img-top"
+      />
     )
   } else {
     img_code = (
-      <Img fluid={thumbnail_image} alt={title} className="card-img-top" />
+      <GatsbyImage image={thumbnail} alt={title} className="card-img-top" />
     )
   }
   // 出力
@@ -41,15 +42,3 @@ const Card = ({ fields, frontmatter }) => {
 }
 
 export default Card
-
-export const query = graphql`
-  {
-    def_image: file(absolutePath: { regex: "images/default.png/" }) {
-      childImageSharp {
-        fluid(maxHeight: 1000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`

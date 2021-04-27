@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ title, description, image, lang }) {
+function Seo({ title, description, image, lang }) {
   const { pathname } = useLocation()
   const { site, file } = useStaticQuery(
     graphql`
@@ -21,9 +21,7 @@ function SEO({ title, description, image, lang }) {
         }
         file(absolutePath: { regex: "/icon_card.png/" }) {
           childImageSharp {
-            fluid {
-              src
-            }
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
         }
       }
@@ -40,7 +38,7 @@ function SEO({ title, description, image, lang }) {
   const seo = {
     title: `${title || defaultTitle}`,
     description: description || defaultDescription,
-    image: `${siteUrl}${file.childImageSharp.fluid.src}`,
+    image: `${siteUrl}${file.childImageSharp.gatsbyImageData.src}`,
     url: `${siteUrl}${pathname}`,
   }
 
@@ -64,18 +62,18 @@ function SEO({ title, description, image, lang }) {
   )
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   image: PropTypes.string,
   lang: PropTypes.string,
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   title: null,
   description: null,
   image: null,
   lang: null,
 }
 
-export default SEO
+export default Seo

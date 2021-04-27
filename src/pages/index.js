@@ -3,14 +3,14 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Bio from "../components/bio"
 import Cards from "../components/cards"
 
 const BlogIndex = ({ data }) => {
   return (
     <Layout>
-      <SEO />
+      <Seo title="home" />
       <Helmet>
         <title>Sotono.tk</title>
       </Helmet>
