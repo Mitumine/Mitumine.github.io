@@ -1,14 +1,14 @@
 ---
 title: がらくたのうた
 date: "2021/05"
-description: "Rock"
+description: "Techno"
 tags: ["music"]
 thumbnail: 0.png
 ---
 
 <iframe width="1264" height="720" src="https://www.youtube.com/embed/q6b3eRRXWoc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Vocal by 東北きりたん(NEUTRINO)
+Vocal by 東北きりたん(NEUTRINO)  
 illustration by sotono
 
 ---
