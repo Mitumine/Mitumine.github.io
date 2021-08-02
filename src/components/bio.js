@@ -19,6 +19,8 @@ const Bio = () => {
         }
       }
     }
+
+    
   `)
 
   const author = data.site.siteMetadata?.author

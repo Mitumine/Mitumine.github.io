@@ -12,7 +12,7 @@ const BlogIndex = ({ data }) => {
     <Layout>
       <Seo title="home" />
       <Helmet>
-        <title>Sotono.tk</title>
+        <title>{data.title}</title>
       </Helmet>
 
       <h2>News</h2>
@@ -43,6 +43,11 @@ export const pageQuery = graphql`
     ) {
       nodes {
         ...PortfolioCard
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
   }
