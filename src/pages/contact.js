@@ -20,7 +20,7 @@ const ContactPage = () => {
       >
         読み込んでいます…
       </iframe>
-      <Bio />
+      {/* <Bio /> */}
     </Layout>
   )
 }
