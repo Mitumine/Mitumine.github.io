@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: Mitumine/Sotono_web
+
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: post
+    label: Post
+    folder: post
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "post",
+        }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }

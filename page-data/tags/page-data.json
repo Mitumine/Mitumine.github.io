@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-tags-js",
+    "path": "/tags/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Mushroom Records"}},"allMarkdownRemark":{"group":[{"fieldValue":"Rust","totalCount":2},{"fieldValue":"discography","totalCount":1},{"fieldValue":"graphic","totalCount":23},{"fieldValue":"music","totalCount":10},{"fieldValue":"pickup","totalCount":3},{"fieldValue":"program","totalCount":10}]}},"pageContext":{}},
+    "staticQueryHashes": ["3713412316"]}

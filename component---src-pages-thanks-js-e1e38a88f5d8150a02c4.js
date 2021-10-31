@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_blog=self.webpackChunkgatsby_starter_blog||[]).push([[790],{5755:function(t,e,a){a.r(e);var l=a(7294),n=a(5444),r=a(7198),s=a(3751);e.default=function(t){var e=t.data,a=t.location,c=e.site.siteMetadata.title;return l.createElement(r.Z,{location:a,title:c},l.createElement(s.Z,{title:"Thanks"}),l.createElement("h2",null,"Thanks."),l.createElement("p",null,"送信完了しました。"),l.createElement(n.Link,{to:"/"},"戻る"))}}}]);
+//# sourceMappingURL=component---src-pages-thanks-js-e1e38a88f5d8150a02c4.js.map
