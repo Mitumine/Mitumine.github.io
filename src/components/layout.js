@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -16,24 +17,42 @@ function Layout({ children }) {
 
   const header = (
     <header className="global-header">
-      <h1 className="main-heading">
-        <Link to="/">{sitetitle}</Link>
-      </h1>
       <div className="container">
         <div className="row my-4">
           <div className="col">
+            <StaticImage
+              src="../images/mr_black.png"
+              alt="Mushroom Records"
+              layout="constrained"
+            />
+          </div>
+          <div className="col">
             &nbsp;/&nbsp;
-            <Link to="/">Home</Link>
+            <Link to="/">home</Link>
             &nbsp;/&nbsp;
-            <Link to="/tags/graphic">Graphics</Link>
+            <Link to="/about">about me</Link>
             &nbsp;/&nbsp;
-            <Link to="/tags/music">Musics</Link>
+            <br />
             &nbsp;/&nbsp;
-            <Link to="/tags/program">Programs</Link>
+            <Link to="/tags/music">music video</Link>
             &nbsp;/&nbsp;
-            <Link to="/tags/log">log</Link>
+            <Link to="/tags/discography">discography</Link>
             &nbsp;/&nbsp;
-            <Link to="/contact">Contact</Link>
+            <br />
+            &nbsp;/&nbsp;
+            <Link to="/tags/graphic">graphic</Link>
+            &nbsp;/&nbsp;
+            <s>
+              <Link to="/404">Programs</Link>
+            </s>
+            &nbsp;/&nbsp;
+            <s>
+              <Link to="/404">text</Link>
+            </s>
+            &nbsp;/&nbsp;
+            <br />
+            &nbsp;/&nbsp;
+            <Link to="/contact">contact</Link>
             &nbsp;/&nbsp;
           </div>
         </div>

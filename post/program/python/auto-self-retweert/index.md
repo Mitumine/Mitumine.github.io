@@ -1,7 +1,7 @@
 ---
 title: "どうせ起動してるPCを使って、宣伝ツイートを自動でRTする"
 date: "2021/01"
-description: "Techno"
+description: "Music"
 tags: ["program"]
 thumbnail: 0.png
 ---

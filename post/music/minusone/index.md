@@ -1,7 +1,7 @@
 ---
 title: "-1"
 date: "2021/01"
-description: "Techno"
+description: "Music"
 tags: ["music"]
 thumbnail: 0.jpg
 ---

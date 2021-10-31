@@ -1,7 +1,7 @@
 ---
 title: 宇宙飛行士より君へ
 date: "2021/06"
-description: "Techno"
+description: "Music"
 tags: ["music"]
 thumbnail: 0.png
 ---

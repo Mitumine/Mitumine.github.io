@@ -1,7 +1,7 @@
 ---
 title: イロメガネの人生論
 date: "2021/01"
-description: "Rock"
+description: "Music"
 tags: ["music", "pickup"]
 thumbnail: 0.jpg
 ---

@@ -15,11 +15,10 @@ const BlogIndex = ({ data }) => {
         <title>{data.title}</title>
       </Helmet>
 
-      <h2>News</h2>
       <Cards items={data.portfolio_news.nodes} />
-      <h2>Pickup</h2>
-      <Cards items={data.portfolio_pick.nodes} />
-      <Bio />
+      {/* <h2>Pickup</h2> */}
+      {/* <Cards items={data.portfolio_pick.nodes} /> */}
+      {/* <Bio /> */}
     </Layout>
   )
 }
@@ -38,7 +37,7 @@ export const pageQuery = graphql`
       }
     }
     portfolio_news: allMarkdownRemark(
-      limit: 3
+      limit: 9
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {

@@ -1,7 +1,7 @@
 ---
 title: level one
 date: "2021/07"
-description: "Techno"
+description: "Music"
 tags: ["music"]
 thumbnail: 0.jpg
 ---

@@ -13,7 +13,7 @@ const BlogIndex = ({ pageContext, data }) => {
       <Seo title={tag} />
       <h2>{tag}</h2>
       <Cards items={data.portfolio.nodes} />
-      <Bio />
+      {/* <Bio /> */}
     </Layout>
   )
 }
@@ -21,7 +21,7 @@ const BlogIndex = ({ pageContext, data }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query ($tag: String) {
     portfolio: allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
