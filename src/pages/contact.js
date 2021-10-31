@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Bio from "../components/bio"
+// import Bio from "../components/bio"
 import Seo from "../components/seo"
 
 const ContactPage = () => {
@@ -15,7 +15,8 @@ const ContactPage = () => {
         width="100%"
         height="1000"
         frameborder="0"
-        marginheight="0"s
+        marginheight="0"
+        s
         marginwidth="0"
       >
         読み込んでいます…
