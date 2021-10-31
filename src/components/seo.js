@@ -35,7 +35,7 @@ function Seo({ title, description, image, lang }) {
     title: `${title || defaultTitle}`,
     description: description || defaultDescription,
     image: `${siteUrl}${file.childImageSharp.gatsbyImageData.src}`,
-    url: `${siteUrl}${pathname}`,
+  url: `${siteUrl}${pathname}`,
   }
 
   return (

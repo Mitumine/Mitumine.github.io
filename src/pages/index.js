@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
+// import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,14 +9,8 @@ import Cards from "../components/cards"
 const BlogIndex = ({ data }) => {
   return (
     <Layout>
-      <Helmet>
-        <title>Mushroom Records</title>
-      </Helmet>
-
+      <Seo title="home" />
       <Cards items={data.portfolio_news.nodes} />
-      {/* <h2>Pickup</h2> */}
-      {/* <Cards items={data.portfolio_pick.nodes} /> */}
-      {/* <Bio /> */}
     </Layout>
   )
 }

@@ -17,6 +17,13 @@ module.exports = {
 
   plugins: [
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/icon_card.png`,
+      },
+    },
+
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-64709415-1",
