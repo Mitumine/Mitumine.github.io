@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Bio from "../components/bio"
+// import Bio from "../components/bio"
 import Cards from "../components/cards"
 
 const BlogIndex = ({ pageContext, data }) => {

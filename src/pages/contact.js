@@ -15,7 +15,7 @@ const ContactPage = () => {
         width="100%"
         height="1000"
         frameborder="0"
-        marginheight="0"
+        marginheight="0"s
         marginwidth="0"
       >
         読み込んでいます…

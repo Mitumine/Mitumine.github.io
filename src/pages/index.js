@@ -4,15 +4,13 @@ import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Bio from "../components/bio"
 import Cards from "../components/cards"
 
 const BlogIndex = ({ data }) => {
   return (
     <Layout>
-      <Seo title="home" />
       <Helmet>
-        <title>{data.title}</title>
+        <title>Mushroom Records</title>
       </Helmet>
 
       <Cards items={data.portfolio_news.nodes} />

@@ -28,12 +28,8 @@ function Seo({ title, description, image, lang }) {
     `
   )
 
-  const {
-    defaultTitle,
-    defaultDescription,
-    siteUrl,
-    twitterUsername,
-  } = site.siteMetadata
+  const { defaultTitle, defaultDescription, siteUrl, twitterUsername } =
+    site.siteMetadata
 
   const seo = {
     title: `${title || defaultTitle}`,
@@ -44,7 +40,7 @@ function Seo({ title, description, image, lang }) {
 
   return (
     <Helmet>
-      <title>{seo.title} | Sotono.tk</title>
+      <title>{seo.title} | Mushroom Records</title>
       <html lang="ja" />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
