@@ -1,40 +1,38 @@
+# .github/workflows/deploy.yml
 name: GitHub Pages
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-
+      - source
 jobs:
-  deploy:
-    runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+  build:
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '10.x'
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v1
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-yarn-
 
-      - run: npm ci
-      - run: npm run format
-#       - run: npm run test
-      - run: gatsby build
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run build for GitHub Pages
+        run: yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: master
