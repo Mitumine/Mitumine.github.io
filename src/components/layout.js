@@ -20,11 +20,13 @@ function Layout({ children }) {
       <div className="container">
         <div className="row my-4">
           <div className="col">
-            <StaticImage
-              src="../images/mr_black.png"
-              alt="Mushroom Records"
-              layout="constrained"
-            />
+            <Link className="logo" to="/">
+              <StaticImage
+                src="../images/mr_black.png"
+                alt="Mushroom Records"
+                layout="constrained"
+              />
+            </Link>
           </div>
           <div className="col">
             &nbsp;/&nbsp;
@@ -34,21 +36,11 @@ function Layout({ children }) {
             &nbsp;/&nbsp;
             <br />
             &nbsp;/&nbsp;
-            <Link to="/tags/music">music video</Link>
+            <Link to="/contents/music">music video</Link>
             &nbsp;/&nbsp;
-            <Link to="/tags/discography">discography</Link>
+            <Link to="/contents/discography">discography</Link>
             &nbsp;/&nbsp;
-            <br />
-            &nbsp;/&nbsp;
-            <Link to="/tags/graphic">graphic</Link>
-            &nbsp;/&nbsp;
-            <s>
-              <Link to="/404">Programs</Link>
-            </s>
-            &nbsp;/&nbsp;
-            <s>
-              <Link to="/404">text</Link>
-            </s>
+            <Link to="/contents/graphic">graphic</Link>
             &nbsp;/&nbsp;
             <br />
             &nbsp;/&nbsp;

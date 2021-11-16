@@ -10,44 +10,45 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogPostTemplate = path.resolve(`./src/templates/post.js`)
   const tagTemplate = path.resolve("src/templates/tags.js")
 
-  const result = await graphql(`{
-  postsRemark: allMarkdownRemark(
-    sort: {order: DESC, fields: [frontmatter___date]}
-    limit: 2000
-  ) {
-    edges {
-      node {
-        frontmatter {
-          tags
-          title
-          date
-          description
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+  const result = await graphql(`
+    {
+      postsRemark: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 2000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              tags
+              title
+              date
+              description
+              thumbnail {
+                childImageSharp {
+                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+                }
+              }
+            }
+            fileAbsolutePath
+            fields {
+              slug
             }
           }
         }
-        fileAbsolutePath
-        fields {
-          slug
+        nodes {
+          id
+          fields {
+            slug
+          }
+        }
+      }
+      contentsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
         }
       }
     }
-    nodes {
-      id
-      fields {
-        slug
-      }
-    }
-  }
-  tagsGroup: allMarkdownRemark(limit: 2000) {
-    group(field: frontmatter___tags) {
-      fieldValue
-    }
-  }
-}
-`)
+  `)
 
   // handle errors
   if (result.errors) {
@@ -65,10 +66,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   // Make tag pages
-  const tags = result.data.tagsGroup.group
-  tags.forEach(tag => {
+  const contents = result.data.contentsGroup.group
+  contents.forEach(tag => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/contents/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,
